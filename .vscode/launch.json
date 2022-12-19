@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch WikiScraper",
+            "request": "launch",
+            "mainClass": "webScrapingTests.wiki.WikiScraper",
+            "projectName": "midtermproject",
+            "env": {
+                "JAVA_TOOL_OPTIONS": "-Dfile.encoding=UTF8"
+            }
+        }
+    ]
+}

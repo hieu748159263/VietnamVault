@@ -1,0 +1,17 @@
+# Editor configuration, see http://editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 80
+
+[*.sh]
+end_of_line = lf
+
+[*.java]
+charset = utf-8
+indent_size = 4
+max_line_length = 120
