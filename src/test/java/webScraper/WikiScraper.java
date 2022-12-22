@@ -1,4 +1,4 @@
-package webScrapingTests.wiki;
+package webScraper;
 
 import com.gargoylesoftware.htmlunit.html.*;
 import com.gargoylesoftware.htmlunit.WebClient;
@@ -53,7 +53,7 @@ public class WikiScraper {
         // pretty print json string to file
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonString = gson.toJson(JsonParser.parseString(kings.toString()));
-        try (PrintWriter output = new PrintWriter("king.json")) {
+        try (PrintWriter output = new PrintWriter("src/main/resources/kings.json")) {
             output.println(jsonString);
         }
     }
