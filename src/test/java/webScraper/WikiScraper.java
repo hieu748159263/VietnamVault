@@ -13,8 +13,8 @@ import com.google.gson.*;
 public class WikiScraper {
     public static void main(String[] args) throws Exception {
 
-        final String url = "https://vi.wikipedia.org/wiki/Vua_Vi%E1%BB%87t_Nam";
-        final String xpathExpr = "//table[@style='width:100%; font-size:90%; text-align:center; border:1px solid lavender;']";
+        final String url = "https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_Di_t%C3%ADch_qu%E1%BB%91c_gia_Vi%E1%BB%87t_Nam";
+        final String xpathExpr = "//table[@class='wikitable sortable']";
         final String bracketRegex = "\\[\\w+\\]";
         JSONArray kings = new JSONArray();
 
@@ -40,7 +40,7 @@ public class WikiScraper {
                 for (int i = 1; i < rows.size(); i++) {
                     List<HtmlTableCell> cells = rows.get(i).getCells();
                     JSONObject king = new JSONObject();
-                    for (int j = 0; j < attrName.size(); j++)
+                    for (int j = 0; j < Math.min(attrName.size(), cells.size()); j++)
                         king.put(attrName.get(j),
                                 cells.get(j).asNormalizedText()
                                         .replaceAll(bracketRegex, "")
