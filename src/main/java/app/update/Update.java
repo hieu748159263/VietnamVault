@@ -27,10 +27,8 @@ public class Update {
                 .readValues(csvFile);
         List<ScrapeObject> scrapeObjects = scrapeObjectIter.readAll();
 
-        for (ScrapeObject scrapeObject : scrapeObjects) {
-            System.out.println(scrapeObject.getLink());
+        for (ScrapeObject scrapeObject : scrapeObjects) 
             scrapeObject.scrape();
-        }
     }
 }
 
