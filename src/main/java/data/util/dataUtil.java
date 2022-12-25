@@ -1,4 +1,4 @@
-package app.update;
+package data.util;
 
 import scraper.ScrapeObject;
 
@@ -9,11 +9,11 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import java.io.File;
 import java.util.List;
 
-public class Update {
+public class dataUtil {
 
-    public static void update(String csvFilepath) throws Exception {
+    public static void update() throws Exception {
 
-        File csvFile = new File(csvFilepath);
+        File csvFile = new File("src/test/resources/scrapeObject.csv");
 
         CsvMapper csvMapper = new CsvMapper();
         CsvSchema csvSchema = csvMapper
@@ -27,8 +27,9 @@ public class Update {
                 .readValues(csvFile);
         List<ScrapeObject> scrapeObjects = scrapeObjectIter.readAll();
 
-        for (ScrapeObject scrapeObject : scrapeObjects) 
+        for (ScrapeObject scrapeObject : scrapeObjects) {
+            System.out.println(scrapeObject.getLink());
             scrapeObject.scrape();
+        }
     }
 }
-
