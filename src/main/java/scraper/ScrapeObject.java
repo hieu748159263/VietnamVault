@@ -51,21 +51,22 @@ public class ScrapeObject {
             for (Object o : page.getByXPath(xpath)) {
                 HtmlTable table = (HtmlTable) o;
 
-                List<HtmlTableCell> header = table.getByXPath(".//th");
+                List<HtmlTableCell> header = table.getRow(0).getCells();
                 List<String> attrName = header.stream()
                         .map(cell -> cell.asNormalizedText().replaceAll(regex, ""))
                         .toList();
 
-                List<HtmlTableRow> rows = table.getRows();
-                for (int i = 1; i < rows.size(); i++) {
-                    List<HtmlTableCell> cells = rows.get(i).getCells();
+                for (int i = 1; i < table.getRows().size(); i++) {
                     JSONObject jsonObject = new JSONObject();
-
-                    for (int j = 0; j < Math.min(attrName.size(), cells.size()); j++)
-                        jsonObject.put(attrName.get(j),
-                                cells.get(j).asNormalizedText()
-                                        .replaceAll(regex, "")
-                                        .replaceAll("\n", ", "));
+                    for (int j = 0; j < attrName.size(); j++)
+                        try {
+                            jsonObject.put(attrName.get(j),
+                                    table.getCellAt(i, j).asNormalizedText()
+                                            .replaceAll(regex, "")
+                                            .replaceAll("\n", ", "));
+                        } catch (Exception NullPointerException) {
+                            jsonObject.put(attrName.get(j), "");
+                        }
                     jsonObjects.put(jsonObject);
                 }
             }
