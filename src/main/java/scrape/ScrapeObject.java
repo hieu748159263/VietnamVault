@@ -1,24 +1,23 @@
-package scraper;
-
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-import com.gargoylesoftware.htmlunit.html.*;
-import com.gargoylesoftware.htmlunit.WebClient;
+package scrape;
 
 import java.util.List;
-import java.io.PrintWriter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import com.google.gson.*;
 
-@JsonPropertyOrder({ "link", "xpath", "regex", "output_filename" })
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlTable;
+import com.gargoylesoftware.htmlunit.html.HtmlTableCell;
+
+@JsonPropertyOrder({ "link", "xpath", "regex", "output_attribute_name" })
 public class ScrapeObject {
 
     private String link;
     private String xpath;
     private String regex;
-    private String output_filename;
+    private String outputAttributeName;
 
     public ScrapeObject() {
     }
@@ -35,11 +34,11 @@ public class ScrapeObject {
         return regex;
     }
 
-    public String getOutput_filename() {
-        return output_filename;
+    public String getOutputAttributeName() {
+        return outputAttributeName;
     }
 
-    public void scrape() throws Exception {
+    public JSONArray scrape() throws Exception {
 
         JSONArray jsonObjects = new JSONArray();
 
@@ -71,10 +70,6 @@ public class ScrapeObject {
                 }
             }
         }
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String jsonString = gson.toJson(JsonParser.parseString(jsonObjects.toString()));
-        try (PrintWriter output = new PrintWriter("src/test/resources/data/" + output_filename)) {
-            output.println(jsonString);
-        }
+        return jsonObjects;
     }
 }
