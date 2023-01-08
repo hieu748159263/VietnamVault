@@ -1,4 +1,4 @@
-link,xpath,regex,output_attribute_name
+link,xpath,regex,type
 http://vietycotruyen.com.vn/cac-trieu-dai-viet-nam-qua-tung-thoi-ky-lich-su,//table[@style='width:100%;'],,dynasty
 https://vi.wikipedia.org/wiki/Vua_Vi%E1%BB%87t_Nam,//table[@style='width:100%; font-size:90%; text-align:center; border:1px solid lavender;'],\[\w+\],king
 https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_Di_t%C3%ADch_qu%E1%BB%91c_gia_Vi%E1%BB%87t_Nam,//table[@class='wikitable sortable'],\[\w+\],site
