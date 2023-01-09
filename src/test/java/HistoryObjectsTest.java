@@ -17,7 +17,7 @@ public class HistoryObjectsTest {
         }.getType();
         List<King> kings = gson.fromJson(new FileReader("src\\main\\resources\\data\\king.json"), kingListType);
         for (King king : kings) {
-            // Test: check for null fields after serialization
+            // Test: check for null fields after deserialization
             // for (Field f : king.getClass().getDeclaredFields()) {
             //     f.setAccessible(true);
             //     if (f.get(king) == null)
