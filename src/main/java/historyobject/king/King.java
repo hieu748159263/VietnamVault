@@ -22,13 +22,12 @@ public class King extends HistoryObject {
     @SerializedName("Trị vì")
     private String triVi;
 
-    // Lazy loading: return default value if field is null
     public String getTen() {
         return ten;
     }
 
     public String getMieuHieu() {
-        return (mieuHieu == null) ? DEFAULT_STRING_VALUE : mieuHieu;
+        return lazyLoading(mieuHieu);
     }
 
     public String getThuyHieu() {
@@ -44,7 +43,7 @@ public class King extends HistoryObject {
     }
 
     public String getTheThu() {
-        return (theThu == null) ? DEFAULT_STRING_VALUE : theThu;
+        return lazyLoading(theThu);
     }
 
     public String getTriVi() {

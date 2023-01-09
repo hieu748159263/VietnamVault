@@ -17,10 +17,15 @@ public class HistoryObjectsTest {
         }.getType();
         List<King> kings = gson.fromJson(new FileReader("src\\main\\resources\\data\\king.json"), kingListType);
         for (King king : kings) {
-            for (Field f : king.getClass().getDeclaredFields()) {
-                f.setAccessible(true);
-                if (f.get(king) == null)
-                    System.out.println(king.toString());
+            // Test: check for null fields after serialization
+            // for (Field f : king.getClass().getDeclaredFields()) {
+            //     f.setAccessible(true);
+            //     if (f.get(king) == null)
+            //         System.out.println(king.toString());
+            // }
+            // Test: check for null fields after lazy loading
+            if (king.getThuyHieu() == null){
+                System.out.println(king.toString());
             }
         }
     }
