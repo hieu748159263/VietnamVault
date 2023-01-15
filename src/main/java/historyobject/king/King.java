@@ -49,12 +49,4 @@ public class King extends HistoryObject {
     public String getTriVi() {
         return triVi;
     }
-
-    // Test method, delete after finish
-    @Override
-    public String toString() {
-        return "King [mieuHieu=" + mieuHieu + ", nienHieu=" + nienHieu + ", ten=" + ten + ", tenHuy=" + tenHuy
-                + ", theThu="
-                + theThu + ", thuyHieu=" + thuyHieu + ", triVi=" + triVi + "]";
-    }
 }
