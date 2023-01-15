@@ -10,7 +10,7 @@ public class Dynasty {
     @SerializedName("Thời kỳ")
     private String period;
 
-    @SerializedName("Các vị vua")
+    @SerializedName(" Các vị vua")
     private String kings;
 
     @SerializedName("Tên triều đại")
