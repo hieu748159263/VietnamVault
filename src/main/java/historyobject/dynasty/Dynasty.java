@@ -2,7 +2,9 @@ package historyobject.dynasty;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Dynasty {
+import historyobject.HistoryObject;
+
+public class Dynasty extends HistoryObject{
 
     @SerializedName("Tuổi thọ")
     private String age;
@@ -20,22 +22,22 @@ public class Dynasty {
     private String reignTime;
 
     public String getAge() {
-        return age;
+        return lazyLoading(age);
     }
 
     public String getPeriod() {
-        return period;
+        return lazyLoading(period);
     }
 
     public String getKings() {
-        return kings;
+        return lazyLoading(kings);
     }
 
     public String getDynastyName() {
-        return dynastyName;
+        return lazyLoading(dynastyName);
     }
 
     public String getReignTime() {
-        return reignTime;
+        return lazyLoading(reignTime);
     }
 }

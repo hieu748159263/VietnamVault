@@ -7,7 +7,7 @@ import historyobject.HistoryObject;
 public class King extends HistoryObject {
 
     // multiple deserialize name per field
-    @SerializedName(value = "Vua", alternate = { "Thủ lĩnh", "Tước hiệu", "Chúa", "Hoàng đế" })
+    @SerializedName(value = "Vua", alternate = { "Thủ lĩnh", "Tiết độ sứ","Tước hiệu", "Chúa", "Hoàng đế" })
     private String ten;
     @SerializedName("Miếu hiệu")
     private String mieuHieu;
@@ -23,7 +23,7 @@ public class King extends HistoryObject {
     private String triVi;
 
     public String getTen() {
-        return ten;
+        return lazyLoading(ten);
     }
 
     public String getMieuHieu() {
@@ -31,15 +31,15 @@ public class King extends HistoryObject {
     }
 
     public String getThuyHieu() {
-        return thuyHieu;
+        return lazyLoading(thuyHieu);
     }
 
     public String getNienHieu() {
-        return nienHieu;
+        return lazyLoading(nienHieu);
     }
 
     public String getTenHuy() {
-        return tenHuy;
+        return lazyLoading(tenHuy);
     }
 
     public String getTheThu() {
@@ -47,6 +47,6 @@ public class King extends HistoryObject {
     }
 
     public String getTriVi() {
-        return triVi;
+        return lazyLoading(triVi);
     }
 }

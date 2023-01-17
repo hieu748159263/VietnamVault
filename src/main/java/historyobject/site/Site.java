@@ -2,40 +2,42 @@ package historyobject.site;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Site {
+import historyobject.HistoryObject;
 
-    @SerializedName("Loại di tích")
+public class Site extends HistoryObject{
+
+    @SerializedName(value = "Loại di tích", alternate={"Hạng"})
     private String typeOfSite;
 
     @SerializedName("Di tích")
     private String name;
 
-    @SerializedName("Ghi chú")
+    @SerializedName(value = "Ghi chú", alternate = {"Giá trị nổi bật"})
     private String note;
 
-    @SerializedName("Vị trí")
+    @SerializedName(value = "Vị trí",  alternate = {"Địa điểm"} )
     private String location;
 
     @SerializedName("Năm CN")
     private String recognizedYear;
 
     public String getTypeOfSite() {
-        return typeOfSite;
+        return lazyLoading(typeOfSite);
     }
 
     public String getName() {
-        return name;
+        return lazyLoading(name);
     }
 
     public String getNote() {
-        return note;
+        return lazyLoading(note);
     }
 
     public String getLocation() {
-        return location;
+        return lazyLoading(location);
     }
 
     public String getRecognizedYear() {
-        return recognizedYear;
+        return lazyLoading(recognizedYear);
     }
 }
