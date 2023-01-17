@@ -2,7 +2,9 @@ package historyobject.festival;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Festival {
+import historyobject.HistoryObject;
+
+public class Festival extends HistoryObject{
 
     @SerializedName("Lễ hội truyền thống")
     private String festivalName;
@@ -20,22 +22,22 @@ public class Festival {
     private String location;
 
     public String getFestivalName() {
-        return festivalName;
+        return lazyLoading(festivalName);
     }
 
     public String getLunarCalendarDate() {
-        return lunarCalendarDate;
+        return lazyLoading(lunarCalendarDate);
     }
 
     public String getNote() {
-        return note;
+        return lazyLoading(note);
     }
 
     public String getTheFirstTime_Year() {
-        return theFirstTime_Year;
+        return lazyLoading(theFirstTime_Year);
     }
 
     public String getLocation() {
-        return location;
+        return lazyLoading(location);
     }
 }
