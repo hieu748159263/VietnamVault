@@ -75,10 +75,10 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Node[] nodes = new Node[10];
 
-        // // festival_choicebox.getItems().addAll(festival);
-        // dynasty_choicebox.getItems().addAll(dynasty);
-        // king_choicebox.getItems().addAll(king);
-        // site_choicebox.getItems().addAll(site);
+        festival_choicebox.getItems().addAll(festival);
+        dynasty_choicebox.getItems().addAll(dynasty);
+        king_choicebox.getItems().addAll(king);
+        site_choicebox.getItems().addAll(site);
 
         for (int i = 0; i < nodes.length; i++) {
             try {
