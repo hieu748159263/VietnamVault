@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -129,7 +128,12 @@
          <children>
             <Pane fx:id="pnlLeHoi" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView layoutY="150.0" prefHeight="426.0" prefWidth="702.0">
+                  <Label layoutX="17.0" layoutY="72.0" prefHeight="25.0" prefWidth="88.0" text="Tìm kiếm" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="683.0">
                     <columns>
                       <TableColumn prefWidth="75.0" text="Lễ hội truyền thống" />
                       <TableColumn prefWidth="75.0" text="Ngày âm lịch" />
@@ -141,18 +145,22 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField layoutX="398.0" layoutY="73.0" prefHeight="25.0" prefWidth="236.0" promptText="search" />
+                  <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                   <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các lễ hội văn hóa Việt Nam" textFill="#dfdbdb">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="festival_choicebox" layoutX="111.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" stylesheets="style.css" />
                </children>
             </Pane>
             <Pane fx:id="pnlSuKien" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView layoutY="150.0" prefHeight="426.0" prefWidth="702.0">
+                  <Label layoutX="17.0" layoutY="72.0" prefHeight="25.0" prefWidth="88.0" text="Tìm kiếm" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="683.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Lễ hội truyền thống" />
                         <TableColumn prefWidth="75.0" text="Ngày âm lịch" />
@@ -164,18 +172,22 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField layoutX="398.0" layoutY="73.0" prefHeight="25.0" prefWidth="236.0" promptText="search" />
+                  <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                   <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các sự kiện lịch sử Việt Nam" textFill="#dfdbdb">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="111.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" stylesheets="style.css" />
                </children>
             </Pane>
             <Pane fx:id="pnlTrieuDai" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView layoutY="150.0" prefHeight="426.0" prefWidth="702.0">
+                  <Label layoutX="17.0" layoutY="72.0" prefHeight="25.0" prefWidth="88.0" text="Tìm kiếm" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="683.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Tuổi thọ" />
                         <TableColumn prefWidth="75.0" text="Thời kỳ" />
@@ -187,18 +199,22 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField layoutX="398.0" layoutY="73.0" prefHeight="25.0" prefWidth="236.0" promptText="search" />
+                  <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                   <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các triều đại lịch sử Việt Nam" textFill="#dfdbdb">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="dynasty_choicebox" layoutX="111.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" stylesheets="style.css" />
                </children>
             </Pane>
             <Pane fx:id="pnlNhanVat" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView layoutY="150.0" prefHeight="426.0" prefWidth="702.0">
+                  <Label layoutX="17.0" layoutY="72.0" prefHeight="25.0" prefWidth="88.0" text="Tìm kiếm" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="683.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Vua" />
                         <TableColumn prefWidth="75.0" text="Miếu hiệu" />
@@ -212,18 +228,22 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField layoutX="398.0" layoutY="73.0" prefHeight="25.0" prefWidth="236.0" promptText="search" />
+                  <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                   <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các nhân vật lịch sử Việt Nam" textFill="#dfdbdb">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="king_choicebox" layoutX="111.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" stylesheets="style.css" />
                </children>
             </Pane>
             <Pane fx:id="pnlDiaDiem" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView layoutY="150.0" prefHeight="426.0" prefWidth="702.0">
+                  <Label layoutX="17.0" layoutY="72.0" prefHeight="25.0" prefWidth="88.0" text="Tìm kiếm" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="683.0">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Loại di tích" />
                         <TableColumn prefWidth="75.0" text="Di tích" />
@@ -235,21 +255,21 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField layoutX="398.0" layoutY="73.0" prefHeight="25.0" prefWidth="236.0" promptText="search" />
+                  <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                   <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các địa điểm/di tích lịch sử Việt Nam" textFill="#dfdbdb">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="site_choicebox" layoutX="111.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" />
                </children>
             </Pane>
-            <Pane fx:id="pnlTrangchu" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+            <Pane fx:id="pnlTrangchu" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="634.0" fitWidth="764.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="683.0" fitWidth="1029.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/an-duong-vuong.jpg" />
-                     </image></ImageView>
+                        <Image url="@../images/2539480.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>

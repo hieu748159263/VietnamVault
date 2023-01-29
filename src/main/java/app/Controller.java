@@ -58,27 +58,27 @@ public class Controller implements Initializable {
     private Pane pnlTrieuDai;
     private Label eventname;
 
+//    @FXML
+//    private ChoiceBox<String> festival_choicebox;
+//    @FXML
+//    private ChoiceBox<String> dynasty_choicebox;
+//    @FXML
+//    private ChoiceBox<String> king_choicebox;
     @FXML
-    private ChoiceBox<String> festival_choicebox;
-    @FXML
-    private ChoiceBox<String> dynasty_choicebox;
-    @FXML
-    private ChoiceBox<String> king_choicebox;
-    @FXML
-    private ChoiceBox<String> site_choicebox;
-    private String[] festival = { "Lễ hội truyền thống", "Ngày âm lịch", "Ghi chú", "Lần đầu tổ chức năm", "Vị trí" };
-    private String[] dynasty = { "Tuổi thọ", "Thời kỳ", "Các vị vua", "Tên triều đại", "Năm trị vì" };
-    private String[] king = { "Vua", "Miếu hiệu", "Thụy hiệu", "Niên hiệu", "Tên húy", "Thế thứ", "Trị vì" };
-    private String[] site = { "Loại di tích", "Di tích", "Ghi chú", "Vị trí", "Năm CN" };
+//    private ChoiceBox<String> site_choicebox;
+//    private String[] festival = { "Lễ hội truyền thống", "Ngày âm lịch", "Ghi chú", "Lần đầu tổ chức năm", "Vị trí" };
+//    private String[] dynasty = { "Tuổi thọ", "Thời kỳ", "Các vị vua", "Tên triều đại", "Năm trị vì" };
+//    private String[] king = { "Vua", "Miếu hiệu", "Thụy hiệu", "Niên hiệu", "Tên húy", "Thế thứ", "Trị vì" };
+//    private String[] site = { "Loại di tích", "Di tích", "Ghi chú", "Vị trí", "Năm CN" };
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Node[] nodes = new Node[10];
 
-        festival_choicebox.getItems().addAll(festival);
-        dynasty_choicebox.getItems().addAll(dynasty);
-        king_choicebox.getItems().addAll(king);
-        site_choicebox.getItems().addAll(site);
+//        festival_choicebox.getItems().addAll(festival);
+//        dynasty_choicebox.getItems().addAll(dynasty);
+//        king_choicebox.getItems().addAll(king);
+//        site_choicebox.getItems().addAll(site);
 
         for (int i = 0; i < nodes.length; i++) {
             try {
