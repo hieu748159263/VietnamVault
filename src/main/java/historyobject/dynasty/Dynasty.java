@@ -21,6 +21,10 @@ public class Dynasty extends HistoryObject{
     @SerializedName("Năm trị vì")
     private String reignTime;
 
+    public Dynasty(String s, String s1, String s2, String s3, String s4) {
+        super();
+    }
+
     public String getAge() {
         return lazyLoading(age);
     }

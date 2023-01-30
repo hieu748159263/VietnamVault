@@ -1,17 +1,29 @@
 package app;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import historyobject.dynasty.Dynasty;
+import historyobject.festival.Festival;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -64,12 +76,33 @@ public class Controller implements Initializable {
 //    private ChoiceBox<String> dynasty_choicebox;
 //    @FXML
 //    private ChoiceBox<String> king_choicebox;
-    @FXML
+//    @FXML
 //    private ChoiceBox<String> site_choicebox;
 //    private String[] festival = { "Lễ hội truyền thống", "Ngày âm lịch", "Ghi chú", "Lần đầu tổ chức năm", "Vị trí" };
 //    private String[] dynasty = { "Tuổi thọ", "Thời kỳ", "Các vị vua", "Tên triều đại", "Năm trị vì" };
 //    private String[] king = { "Vua", "Miếu hiệu", "Thụy hiệu", "Niên hiệu", "Tên húy", "Thế thứ", "Trị vì" };
 //    private String[] site = { "Loại di tích", "Di tích", "Ghi chú", "Vị trí", "Năm CN" };
+
+    @FXML
+    private TableView tblSukien;
+    @FXML
+    private TableView tblLehoi;
+    @FXML
+    private TableView tblTrieudai;
+    @FXML
+    private TableView tblNhanvat;
+    @FXML
+    private TableView tblDiadiem;
+    @FXML
+    private TableColumn columnTuoiTho;
+    @FXML
+    private TableColumn columnThoiKy;
+    @FXML
+    private TableColumn columnCacViVua;
+    @FXML
+    private TableColumn columnTenTrieuDai;
+    @FXML
+    private TableColumn columnNamTriVi;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -99,6 +132,30 @@ public class Controller implements Initializable {
                 e.printStackTrace();
             }
         }
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Type type = new TypeToken<List<Dynasty>>() {
+        }.getType();
+        List<Dynasty> objDynasty;
+        try {
+            objDynasty = gson.fromJson(new FileReader("src\\main\\resources\\data\\dynasty.json"), type);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<Dynasty> observableDynastyList = FXCollections.observableArrayList(objDynasty);
+
+//            final ObservableList<Dynasty> data = FXCollections.observableArrayList(
+//                    new Dynasty("10", "20","30", "40", "50"),
+//                    new Dynasty("10", "20","30", "40", "50"),
+//                    new Dynasty("10", "20","30", "40", "50"),
+//                    new Dynasty("10", "20","30", "40", "50")
+//            );
+        columnTuoiTho.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("age"));
+        columnThoiKy.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("period"));
+        columnCacViVua.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("kings"));
+        columnTenTrieuDai.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
+        columnNamTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
+        tblTrieudai.setItems(observableDynastyList);
 
     }
 
