@@ -14,10 +14,9 @@ public class HistoryObjectsTest {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type type = new TypeToken<List<Festival>>() {
         }.getType();
-        List<Festival> objs = gson.fromJson(new FileReader("src\\main\\resources\\data\\dynasty.json"), type);
+        List<Festival> objs = gson.fromJson(new FileReader("src\\main\\resources\\data\\festival.json"), type);
         for (Festival obj : objs) {
-            if (obj.getFestivalName() == null)
-                System.out.println(obj.getFestivalName());
+            System.out.println(obj.getFestivalName());
         }
     }
 }
