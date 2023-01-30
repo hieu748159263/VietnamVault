@@ -7,6 +7,8 @@ import historyobject.dynasty.Dynasty;
 import historyobject.festival.Festival;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -103,7 +105,8 @@ public class Controller implements Initializable {
     private TableColumn columnTenTrieuDai;
     @FXML
     private TableColumn columnNamTriVi;
-
+    @FXML
+    private TextField search;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Node[] nodes = new Node[10];
@@ -150,13 +153,39 @@ public class Controller implements Initializable {
 //                    new Dynasty("10", "20","30", "40", "50"),
 //                    new Dynasty("10", "20","30", "40", "50")
 //            );
+
         columnTuoiTho.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("age"));
         columnThoiKy.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("period"));
         columnCacViVua.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("kings"));
         columnTenTrieuDai.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
         columnNamTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
         tblTrieudai.setItems(observableDynastyList);
-
+        FilteredList<Dynasty> filteredData = new FilteredList<>(observableDynastyList, b -> true);
+        search.textProperty().addListener((observableValue, s, t1) -> {
+            filteredData.setPredicate(Dynasty -> {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyvalue = t1.toLowerCase();
+                if (Dynasty.getDynastyName().indexOf(searchKeyvalue) > -1) {
+                    return true;
+                } else if (Dynasty.getAge().toLowerCase().indexOf(searchKeyvalue) > -1) {
+                    return true;
+                } else if (Dynasty.getKings().toLowerCase().indexOf(searchKeyvalue) > -1) {
+                    return true;
+                }
+                else if (Dynasty.getPeriod().toLowerCase().indexOf(searchKeyvalue) > -1) {
+                    return true;
+                }
+                else if (Dynasty.getReignTime().toLowerCase().indexOf(searchKeyvalue) > -1) {
+                    return true;
+                } else
+                    return false;
+            });
+        });
+        SortedList<Dynasty> sortedData  = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tblTrieudai.comparatorProperty());
+        tblTrieudai.setItems(sortedData);
     }
 
     public void handleClicks(ActionEvent actionEvent) {
