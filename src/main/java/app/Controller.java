@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import historyobject.dynasty.Dynasty;
 import historyobject.festival.Festival;
+import historyobject.king.King;
+import historyobject.site.Site;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -203,6 +205,44 @@ public class Controller implements Initializable {
         columnTheFirstTime_Year.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theFirstTime_Year"));
         columnLocation.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
         tblLehoi.setItems(observableFestivalList);
+
+        // Add Data King to TableView
+        Type kingType = new TypeToken<List<King>>() {
+        }.getType();
+        List<King> objKing;
+        try {
+            objKing = gson.fromJson(new FileReader("src\\main\\resources\\data\\king.json"), kingType);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<King> observableKingList = FXCollections.observableArrayList(objKing);
+
+        columnTen.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("ten"));
+        columnMieuHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("mieuHieu"));
+        columnThuyHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("thuyHieu"));
+        columnNienHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("nienHieu"));
+        columnTenHuy.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("tenHuy"));
+        columnTheThu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theThu"));
+        columnTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("triVi"));
+        tblNhanvat.setItems(observableKingList);
+
+        // Add Site to TableView
+        Type siteType = new TypeToken<List<Site>>() {
+        }.getType();
+        List<Site> objSite;
+        try {
+            objSite = gson.fromJson(new FileReader("src\\main\\resources\\data\\site.json"), siteType);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<Site> observableSiteList = FXCollections.observableArrayList(objSite);
+
+        columnTypeOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("typeOfSite"));
+        columnMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("name"));
+        columnNoteOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("note"));
+        columnLocationOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
+        columnDateOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("recognizedYear"));
+        tblDiadiem.setItems(observableSiteList);
     }
 
     public void handleClicks(ActionEvent actionEvent) {
