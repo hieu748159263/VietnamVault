@@ -191,13 +191,13 @@ public class Controller implements Initializable {
         // Add Data Festival to TableView
         Type festivalType = new TypeToken<List<Festival>>() {
         }.getType();
-        List<Dynasty> objFestival;
+        List<Festival> objFestival;
         try {
             objFestival = gson.fromJson(new FileReader("src\\main\\resources\\data\\festival.json"), festivalType);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        final ObservableList<Dynasty> observableFestivalList = FXCollections.observableArrayList(objFestival);
+        final ObservableList<Festival> observableFestivalList = FXCollections.observableArrayList(objFestival);
 
         columnFestivalName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("festivalName"));
         columnLunarCalendarDate.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("lunarCalendarDate"));
