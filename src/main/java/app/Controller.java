@@ -94,15 +94,49 @@ public class Controller implements Initializable {
     @FXML
     private TableView tblDiadiem;
     @FXML
-    private TableColumn columnTuoiTho;
+    private TableColumn columnAge;
     @FXML
-    private TableColumn columnThoiKy;
+    private TableColumn columnPeriod;
     @FXML
-    private TableColumn columnCacViVua;
+    private TableColumn columnKings;
     @FXML
-    private TableColumn columnTenTrieuDai;
+    private TableColumn columnDynastyName;
     @FXML
-    private TableColumn columnNamTriVi;
+    private TableColumn columnReignTime;
+    @FXML
+    private TableColumn columnFestivalName;
+    @FXML
+    private TableColumn columnLunarCalendarDate;
+    @FXML
+    private TableColumn columnNote;
+    @FXML
+    private TableColumn columnTheFirstTime_Year;
+    @FXML
+    private TableColumn columnLocation;
+    @FXML
+    private TableColumn columnTen;
+    @FXML
+    private TableColumn columnMieuHieu;
+    @FXML
+    private TableColumn columnThuyHieu;
+    @FXML
+    private TableColumn columnNienHieu;
+    @FXML
+    private TableColumn columnTenHuy;
+    @FXML
+    private TableColumn columnTheThu;
+    @FXML
+    private TableColumn columnTriVi;
+    @FXML
+    private TableColumn columnTypeOfMonument;
+    @FXML
+    private TableColumn columnMonument;
+    @FXML
+    private TableColumn columnNoteOfMonument;
+    @FXML
+    private TableColumn columnLocationOfMonument;
+    @FXML
+    private TableColumn columnDateOfMonument;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -133,30 +167,42 @@ public class Controller implements Initializable {
             }
         }
 
+        // Add Data Dynasty to TableView
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Type type = new TypeToken<List<Dynasty>>() {
+        Type dynastyType = new TypeToken<List<Dynasty>>() {
         }.getType();
         List<Dynasty> objDynasty;
         try {
-            objDynasty = gson.fromJson(new FileReader("src\\main\\resources\\data\\dynasty.json"), type);
+            objDynasty = gson.fromJson(new FileReader("src\\main\\resources\\data\\dynasty.json"), dynastyType);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
         final ObservableList<Dynasty> observableDynastyList = FXCollections.observableArrayList(objDynasty);
 
-//            final ObservableList<Dynasty> data = FXCollections.observableArrayList(
-//                    new Dynasty("10", "20","30", "40", "50"),
-//                    new Dynasty("10", "20","30", "40", "50"),
-//                    new Dynasty("10", "20","30", "40", "50"),
-//                    new Dynasty("10", "20","30", "40", "50")
-//            );
-        columnTuoiTho.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("age"));
-        columnThoiKy.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("period"));
-        columnCacViVua.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("kings"));
-        columnTenTrieuDai.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
-        columnNamTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
+        columnAge.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("age"));
+        columnPeriod.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("period"));
+        columnKings.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("kings"));
+        columnDynastyName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
+        columnReignTime.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
         tblTrieudai.setItems(observableDynastyList);
 
+        // Add Data Festival to TableView
+        Type festivalType = new TypeToken<List<Festival>>() {
+        }.getType();
+        List<Dynasty> objFestival;
+        try {
+            objFestival = gson.fromJson(new FileReader("src\\main\\resources\\data\\festival.json"), festivalType);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<Dynasty> observableFestivalList = FXCollections.observableArrayList(objFestival);
+
+        columnFestivalName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("festivalName"));
+        columnLunarCalendarDate.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("lunarCalendarDate"));
+        columnNote.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("note"));
+        columnTheFirstTime_Year.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theFirstTime_Year"));
+        columnLocation.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
+        tblLehoi.setItems(observableFestivalList);
     }
 
     public void handleClicks(ActionEvent actionEvent) {
