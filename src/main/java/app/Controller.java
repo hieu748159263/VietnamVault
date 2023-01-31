@@ -9,6 +9,8 @@ import historyobject.king.King;
 import historyobject.site.Site;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,7 +72,14 @@ public class Controller implements Initializable {
     private Pane pnlDiaDiem;
     @FXML
     private Pane pnlTrieuDai;
-    private Label eventname;
+    @FXML
+    private TextField tfLeHoi;
+    @FXML
+    private TextField tfTrieuDai;
+    @FXML
+    private TextField tfNhanVat;
+    @FXML
+    private TextField tfDiaDiem;
 
 //    @FXML
 //    private ChoiceBox<String> festival_choicebox;
@@ -187,25 +196,75 @@ public class Controller implements Initializable {
         columnDynastyName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
         columnReignTime.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
         tblTrieudai.setItems(observableDynastyList);
+        //Initial filtered list <Dynasty>
+        FilteredList<Dynasty> filteredDataDynasty = new FilteredList<>(observableDynastyList, b -> true);
+        tfTrieuDai.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataDynasty.setPredicate(Dynasty ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (Dynasty.getReignTime().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Dynasty.getPeriod().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Dynasty.getKings().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Dynasty.getDynastyName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Dynasty.getAge().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
 
+        SortedList<Dynasty> sortedDataDynasty = new SortedList<>(filteredDataDynasty);
+        sortedDataDynasty.comparatorProperty().bind(tblTrieudai.comparatorProperty());
+        tblTrieudai.setItems(sortedDataDynasty);
         // Add Data Festival to TableView
         Type festivalType = new TypeToken<List<Festival>>() {
         }.getType();
-        List<Dynasty> objFestival;
+        List<Festival> objFestival;
         try {
             objFestival = gson.fromJson(new FileReader("src\\main\\resources\\data\\festival.json"), festivalType);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        final ObservableList<Dynasty> observableFestivalList = FXCollections.observableArrayList(objFestival);
+        final ObservableList<Festival> observableFestivalList = FXCollections.observableArrayList(objFestival);
 
-        columnFestivalName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("festivalName"));
-        columnLunarCalendarDate.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("lunarCalendarDate"));
-        columnNote.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("note"));
-        columnTheFirstTime_Year.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theFirstTime_Year"));
-        columnLocation.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
+        columnFestivalName.setCellValueFactory(new PropertyValueFactory<Festival, String>("festivalName"));
+        columnLunarCalendarDate.setCellValueFactory(new PropertyValueFactory<Festival, String>("lunarCalendarDate"));
+        columnNote.setCellValueFactory(new PropertyValueFactory<Festival, String>("note"));
+        columnTheFirstTime_Year.setCellValueFactory(new PropertyValueFactory<Festival, String>("theFirstTime_Year"));
+        columnLocation.setCellValueFactory(new PropertyValueFactory<Festival, String>("location"));
         tblLehoi.setItems(observableFestivalList);
+//        Initial filtered list <festival>
+        FilteredList<Festival> filteredDataFestival = new FilteredList<>(observableFestivalList, b -> true);
+        tfLeHoi.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataFestival.setPredicate(Festival ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (Festival.getFestivalName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Festival.getLocation().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Festival.getNote().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Festival.getLunarCalendarDate().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Festival.getTheFirstTime_Year().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
 
+        SortedList<Festival> sortedDataFestival = new SortedList<>(filteredDataFestival);
+        sortedDataFestival.comparatorProperty().bind(tblLehoi.comparatorProperty());
+        tblLehoi.setItems(sortedDataFestival);
         // Add Data King to TableView
         Type kingType = new TypeToken<List<King>>() {
         }.getType();
@@ -225,7 +284,34 @@ public class Controller implements Initializable {
         columnTheThu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theThu"));
         columnTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("triVi"));
         tblNhanvat.setItems(observableKingList);
+        //        Initial filtered list <King>
+        FilteredList<King> filteredDataKing = new FilteredList<>(observableKingList, b -> true);
+        tfNhanVat.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataKing.setPredicate(King ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (King.getMieuHieu().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (King.getNienHieu().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (King.getTen().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (King.getTenHuy().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (King.getTheThu().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (King.getTriVi().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
 
+        SortedList<King> sortedDataKing = new SortedList<>(filteredDataKing);
+        sortedDataKing.comparatorProperty().bind(tblNhanvat.comparatorProperty());
+        tblNhanvat.setItems(sortedDataKing);
         // Add Site to TableView
         Type siteType = new TypeToken<List<Site>>() {
         }.getType();
@@ -243,7 +329,34 @@ public class Controller implements Initializable {
         columnLocationOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
         columnDateOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("recognizedYear"));
         tblDiadiem.setItems(observableSiteList);
+        //        Initial filtered list <Site>
+        FilteredList<Site> filteredDataSite = new FilteredList<>(observableSiteList, b -> true);
+        tfDiaDiem.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataSite.setPredicate(Site ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (Site.getLocation().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getNote().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getTypeOfSite().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getRecognizedYear().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
+
+        SortedList<Site> sortedDataSite = new SortedList<>(filteredDataSite);
+        sortedDataSite.comparatorProperty().bind(tblDiadiem.comparatorProperty());
+        tblDiadiem.setItems(sortedDataSite);
     }
+
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnLeHoi) {
