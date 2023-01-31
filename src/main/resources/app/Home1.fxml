@@ -145,7 +145,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
+                        <TextField fx:id="tfLeHoi" layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                         <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các lễ hội văn hóa Việt Nam" textFill="#dfdbdb">
                             <font>
                                 <Font size="22.0" />
@@ -199,7 +199,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
+                        <TextField fx:id="tfTrieuDai" layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                         <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các triều đại lịch sử Việt Nam" textFill="#dfdbdb">
                             <font>
                                 <Font size="22.0" />
@@ -228,7 +228,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
+                        <TextField fx:id="tfNhanVat" layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                         <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các nhân vật lịch sử Việt Nam" textFill="#dfdbdb">
                             <font>
                                 <Font size="22.0" />
@@ -255,7 +255,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
+                        <TextField fx:id="tfDiaDiem" layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                         <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các địa điểm/di tích lịch sử Việt Nam" textFill="#dfdbdb">
                             <font>
                                 <Font size="22.0" />
