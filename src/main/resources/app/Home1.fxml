@@ -135,6 +135,7 @@
                         </Label>
                         <TableView fx:id="tblLehoi" layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="663.0">
                             <columns>
+                        <TableColumn fx:id="columnRelatedCharacter" prefWidth="75.0" text="Nhân vật liên quan" />
                                 <TableColumn fx:id="columnFestivalName" prefWidth="75.0" text="Lễ hội truyền thống" />
                                 <TableColumn fx:id="columnLunarCalendarDate" prefWidth="75.0" text="Ngày âm lịch" />
                                 <TableColumn fx:id="columnNote" prefWidth="75.0" text="Ghi chú" />

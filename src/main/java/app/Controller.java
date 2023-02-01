@@ -104,6 +104,7 @@ public class Controller implements Initializable {
     private TableView tblNhanvat;
     @FXML
     private TableView tblDiadiem;
+    // column id used in table Trieu dai
     @FXML
     private TableColumn columnAge;
     @FXML
@@ -114,6 +115,7 @@ public class Controller implements Initializable {
     private TableColumn columnDynastyName;
     @FXML
     private TableColumn columnReignTime;
+    // column id used in table Le hoi
     @FXML
     private TableColumn columnFestivalName;
     @FXML
@@ -124,6 +126,9 @@ public class Controller implements Initializable {
     private TableColumn columnTheFirstTime_Year;
     @FXML
     private TableColumn columnLocation;
+    @FXML
+    private TableColumn columnRelatedCharacter;
+    // column id used in table Nhan vat
     @FXML
     private TableColumn columnTen;
     @FXML
@@ -138,6 +143,7 @@ public class Controller implements Initializable {
     private TableColumn columnTheThu;
     @FXML
     private TableColumn columnTriVi;
+    // column id used in table Dia diem
     @FXML
     private TableColumn columnTypeOfMonument;
     @FXML
@@ -238,6 +244,7 @@ public class Controller implements Initializable {
         columnNote.setCellValueFactory(new PropertyValueFactory<Festival, String>("note"));
         columnTheFirstTime_Year.setCellValueFactory(new PropertyValueFactory<Festival, String>("theFirstTime_Year"));
         columnLocation.setCellValueFactory(new PropertyValueFactory<Festival, String>("location"));
+        columnRelatedCharacter.setCellValueFactory(new PropertyValueFactory<Festival, String>("relatedCharacter"));
         tblLehoi.setItems(observableFestivalList);
 //        Initial filtered list <festival>
         FilteredList<Festival> filteredDataFestival = new FilteredList<>(observableFestivalList, b -> true);
@@ -258,7 +265,9 @@ public class Controller implements Initializable {
                     return true;
                 } else if (Festival.getTheFirstTime_Year().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else return false;
+                } else if (Festival.getRelatedCharacter().toLowerCase().indexOf(searchKeyword) > -1){
+                    return true;
+                }  else return false;
             });
         });
 

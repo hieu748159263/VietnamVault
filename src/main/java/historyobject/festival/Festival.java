@@ -9,7 +9,7 @@ public class Festival extends HistoryObject{
     @SerializedName("Lễ hội truyền thống")
     private String festivalName;
 
-    @SerializedName("Ngày âm lịch")
+    @SerializedName(value = "Ngày âm lịch", alternate = {"Ngày bắt đầu (âm lịch)"})
     private String lunarCalendarDate;
 
     @SerializedName("Ghi chú")
@@ -20,6 +20,8 @@ public class Festival extends HistoryObject{
 
     @SerializedName("Vị trí")
     private String location;
+    @SerializedName("Nhân vật liên quan")
+    private String relatedCharacter;
 
     public String getFestivalName() {
         return lazyLoading(festivalName);
@@ -39,5 +41,8 @@ public class Festival extends HistoryObject{
 
     public String getLocation() {
         return lazyLoading(location);
+    }
+    public String getRelatedCharacter() {
+        return lazyLoading(relatedCharacter);
     }
 }
