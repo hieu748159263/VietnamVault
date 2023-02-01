@@ -276,13 +276,13 @@ public class Controller implements Initializable {
         }
         final ObservableList<King> observableKingList = FXCollections.observableArrayList(objKing);
 
-        columnTen.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("ten"));
-        columnMieuHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("mieuHieu"));
-        columnThuyHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("thuyHieu"));
-        columnNienHieu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("nienHieu"));
-        columnTenHuy.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("tenHuy"));
-        columnTheThu.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("theThu"));
-        columnTriVi.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("triVi"));
+        columnTen.setCellValueFactory(new PropertyValueFactory<King, String>("ten"));
+        columnMieuHieu.setCellValueFactory(new PropertyValueFactory<King, String>("mieuHieu"));
+        columnThuyHieu.setCellValueFactory(new PropertyValueFactory<King, String>("thuyHieu"));
+        columnNienHieu.setCellValueFactory(new PropertyValueFactory<King, String>("nienHieu"));
+        columnTenHuy.setCellValueFactory(new PropertyValueFactory<King, String>("tenHuy"));
+        columnTheThu.setCellValueFactory(new PropertyValueFactory<King, String>("theThu"));
+        columnTriVi.setCellValueFactory(new PropertyValueFactory<King, String>("triVi"));
         tblNhanvat.setItems(observableKingList);
         //        Initial filtered list <King>
         FilteredList<King> filteredDataKing = new FilteredList<>(observableKingList, b -> true);
@@ -323,11 +323,11 @@ public class Controller implements Initializable {
         }
         final ObservableList<Site> observableSiteList = FXCollections.observableArrayList(objSite);
 
-        columnTypeOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("typeOfSite"));
-        columnMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("name"));
-        columnNoteOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("note"));
-        columnLocationOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("location"));
-        columnDateOfMonument.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("recognizedYear"));
+        columnTypeOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("typeOfSite"));
+        columnMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("name"));
+        columnNoteOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("note"));
+        columnLocationOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("location"));
+        columnDateOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("recognizedYear"));
         tblDiadiem.setItems(observableSiteList);
         //        Initial filtered list <Site>
         FilteredList<Site> filteredDataSite = new FilteredList<>(observableSiteList, b -> true);
@@ -431,7 +431,7 @@ public class Controller implements Initializable {
         }
         if (actionEvent.getSource() == btnThoat) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Thoat");
+            alert.setTitle("Thoát");
             alert.setHeaderText("Ban muốn thoát");
             if (alert.showAndWait().get() == ButtonType.OK) {
                 stage = (Stage) App.getScene().getWindow();
