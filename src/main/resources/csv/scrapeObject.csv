@@ -1,5 +1,5 @@
-link,xpath,regex,type
-http://vietycotruyen.com.vn/cac-trieu-dai-viet-nam-qua-tung-thoi-ky-lich-su,//table[@style='width:100%;'],,dynasty
-https://vi.wikipedia.org/wiki/Vua_Vi%E1%BB%87t_Nam,//table[@style='width:100%; font-size:90%; text-align:center; border:1px solid lavender;'],\[\w+\],king
-https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_Di_t%C3%ADch_qu%E1%BB%91c_gia_Vi%E1%BB%87t_Nam,//table[@class='wikitable sortable'],\[\w+\],site
-https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam#Danh_s%C3%A1ch_m%E1%BB%99t_s%E1%BB%91_l%E1%BB%85_h%E1%BB%99i,//table[@class='prettytable wikitable'],\[\w+\],festival
+link,xpath,type
+http://vietycotruyen.com.vn/cac-trieu-dai-viet-nam-qua-tung-thoi-ky-lich-su,//table[@style='width:100%;'],dynasty
+https://vi.wikipedia.org/wiki/Vua_Vi%E1%BB%87t_Nam,//table[@style='width:100%; font-size:90%; text-align:center; border:1px solid lavender;'],king
+https://vi.wikipedia.org/wiki/Danh_s%C3%A1ch_Di_t%C3%ADch_qu%E1%BB%91c_gia_Vi%E1%BB%87t_Nam,//table[@class='wikitable sortable'],site
+https://vi.wikipedia.org/wiki/L%E1%BB%85_h%E1%BB%99i_Vi%E1%BB%87t_Nam#Danh_s%C3%A1ch_m%E1%BB%99t_s%E1%BB%91_l%E1%BB%85_h%E1%BB%99i,//table[@class='prettytable wikitable'],festival
