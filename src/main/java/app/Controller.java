@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import historyobject.dynasty.Dynasty;
+import historyobject.event.Event;
 import historyobject.festival.Festival;
 import historyobject.king.King;
 import historyobject.site.Site;
@@ -158,9 +159,9 @@ public class Controller implements Initializable {
     private TableColumn columnDateOfMonument;
     // column id used in table Su kien
     @FXML
-    private String columnEventName;
+    private TableColumn columnEventName;
     @FXML
-    private String columnEventTime;
+    private TableColumn columnEventTime;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -371,6 +372,41 @@ public class Controller implements Initializable {
         SortedList<Site> sortedDataSite = new SortedList<>(filteredDataSite);
         sortedDataSite.comparatorProperty().bind(tblDiadiem.comparatorProperty());
         tblDiadiem.setItems(sortedDataSite);
+
+        // Add event data to tableview
+        Type eventType = new TypeToken<List<Event>>() {
+        }.getType();
+        List<Event> objEvent;
+        try {
+            objEvent = gson.fromJson(new FileReader("src\\main\\resources\\data\\event.json"), eventType);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<Event> observableEventList = FXCollections.observableArrayList(objEvent);
+
+        columnEventName.setCellValueFactory(new PropertyValueFactory<Event, String>("name"));
+        columnEventTime.setCellValueFactory(new PropertyValueFactory<Event, String>("time"));
+        tblSukien.setItems(observableEventList);
+        //        Initial filtered list <Event>
+        FilteredList<Event> filteredDataEvent = new FilteredList<>(observableEventList, b -> true);
+        tfSukien.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataEvent.setPredicate(Site ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (Site.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getTime().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
+
+        SortedList<Event> sortedDataEvent = new SortedList<>(filteredDataEvent);
+        sortedDataEvent.comparatorProperty().bind(tblSukien.comparatorProperty());
+        tblSukien.setItems(sortedDataEvent);
     }
 
 
