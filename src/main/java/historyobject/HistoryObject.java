@@ -2,7 +2,7 @@ package historyobject;
 
 public class HistoryObject {
 
-    private static final String DEFAULT_STRING_VALUE = "không có";
+    private static final String DEFAULT_STRING_VALUE = "";
 
     // Lazy loading: return default value if field is null
     public static String lazyLoading(String value){
