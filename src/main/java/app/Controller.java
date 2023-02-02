@@ -156,6 +156,11 @@ public class Controller implements Initializable {
     private TableColumn columnLocationOfMonument;
     @FXML
     private TableColumn columnDateOfMonument;
+    // column id used in table Su kien
+    @FXML
+    private String columnEventName;
+    @FXML
+    private String columnEventTime;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
