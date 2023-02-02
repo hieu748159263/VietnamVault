@@ -1,0 +1,626 @@
+[
+  {
+    "Sự kiện": " Văn hóa Soi Nhụ",
+    "Thời gian": "25.000 TCN–7.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Ngườm",
+    "Thời gian": "23.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Tràng An",
+    "Thời gian": "23.000 TCN–1.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Sơn Vi",
+    "Thời gian": "20.000 TCN–12.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Hòa Bình",
+    "Thời gian": "12.000 TCN–10.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Bắc Sơn",
+    "Thời gian": "10.000 TCN - 8.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Quỳnh Văn",
+    "Thời gian": "8.000 TCN - 6.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Cái Bèo",
+    "Thời gian": "7.000 TCN - 5.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Đa Bút",
+    "Thời gian": "6.000 TCN - 5.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Hạ Long",
+    "Thời gian": "3.000 TCN–1.500 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Phùng Nguyên",
+    "Thời gian": "2.000 TCN–1.500 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Tiền Sa Huỳnh",
+    "Thời gian": "2.000 TCN–1.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Đồng Đậu",
+    "Thời gian": "1.500 TCN–1.000 TCN"
+  },
+  {
+    "Sự kiện": " Văn hóa Gò Mun",
+    "Thời gian": "1.000 TCN - 600 TCN"
+  },
+  {
+    "Sự kiện": "Văn hóa Sa Huỳnh",
+    "Thời gian": "1.000 TCN - 200 "
+  },
+  {
+    "Sự kiện": " Văn hóa Đồng Nai",
+    "Thời gian": "1.000 TCN - 0"
+  },
+  {
+    "Sự kiện": " Văn hóa Đông Sơn",
+    "Thời gian": "700 TCN–100"
+  },
+  {
+    "Sự kiện": " Văn hóa Óc Eo",
+    "Thời gian": "1 - 630"
+  },
+  {
+    "Sự kiện": " vua Hùng thành lập quốc gia Văn Lang",
+    "Thời gian": "Thế kỉ VII TCN"
+  },
+  {
+    "Sự kiện": " An Dương Vương thôn tính Văn Lang, thành lập quốc gia Âu Lạc",
+    "Thời gian": "207 TCN"
+  },
+  {
+    "Sự kiện": " Chiến tranh Tần-Việt",
+    "Thời gian": "218 TCN - 207 TCN"
+  },
+  {
+    "Sự kiện": " Triệu Đà xâm lược nước Âu Lạc, sáp nhập vào quốc gia Nam Việt",
+    "Thời gian": "179 TCN"
+  },
+  {
+    "Sự kiện": " Chiến tranh Hán-Nam Việt",
+    "Thời gian": "111 TCN"
+  },
+  {
+    "Sự kiện": " nhà Hán thôn tính Nam Việt",
+    "Thời gian": "111 TCN"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Hai Bà Trưng, Trưng Trắc thành lập quốc gia Lĩnh Nam, kinh đô đặt tại Mê Linh",
+    "Thời gian": "40"
+  },
+  {
+    "Sự kiện": " Chiến tranh Lĩnh Nam - Đông Hán",
+    "Thời gian": "42 - 43"
+  },
+  {
+    "Sự kiện": " Đông Hán thôn tính Lĩnh Nam",
+    "Thời gian": "43"
+  },
+  {
+    "Sự kiện": " Khởi nghĩa Chu Đạt",
+    "Thời gian": "156–160"
+  },
+  {
+    "Sự kiện": " Khởi nghĩa Lương Long",
+    "Thời gian": "178–181"
+  },
+  {
+    "Sự kiện": " Khu Liên khởi nghĩa, tách quận Nhật Nam thành lập quốc gia Lâm Ấp",
+    "Thời gian": "192"
+  },
+  {
+    "Sự kiện": " Tôn Quyền xưng đế, lập nước Đông Ngô, ly khai nhà Hán",
+    "Thời gian": "23 tháng 6 năm 229"
+  },
+  {
+    "Sự kiện": " Khởi nghĩa Bà Triệu",
+    "Thời gian": "246 - 248"
+  },
+  {
+    "Sự kiện": " Chiến tranh Tấn – Ngô",
+    "Thời gian": "280"
+  },
+  {
+    "Sự kiện": " Lưu Dụ ép Tấn Cung Đế nhường ngôi, lập ra nhà Lưu Tống",
+    "Thời gian": "420"
+  },
+  {
+    "Sự kiện": " Thứ sử Giao Châu Đàn Hòa Chi đánh Lâm Ấp, cướp châu báu rút về",
+    "Thời gian": "436"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Lý Trường Nhân",
+    "Thời gian": "468 - 485"
+  },
+  {
+    "Sự kiện": " Tiêu Đạo Thành phế Lưu Chuẩn tự làm vua, thành lập nhà Nam Tề",
+    "Thời gian": "479"
+  },
+  {
+    "Sự kiện": " Tiêu Diễn phế truất Tiêu Bảo Dung, thành lập nhà Lương",
+    "Thời gian": "502"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Lý Bí",
+    "Thời gian": "541"
+  },
+  {
+    "Sự kiện": " Lý Bí thành lập quốc gia Vạn Xuân",
+    "Thời gian": "544"
+  },
+  {
+    "Sự kiện": " Chiến tranh Tùy–Vạn Xuân",
+    "Thời gian": "602"
+  },
+  {
+    "Sự kiện": " Lý Uyên ép Dương Hựu nhường ngôi",
+    "Thời gian": "tháng 5 năm 618"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Lý Tự Tiên",
+    "Thời gian": "687"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Mai Hắc Đế",
+    "Thời gian": "713 - 723"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Phùng Hưng",
+    "Thời gian": "776-791"
+  },
+  {
+    "Sự kiện": " Khúc Thừa Dụ xây dựng chính quyền tự chủ",
+    "Thời gian": "905"
+  },
+  {
+    "Sự kiện": " Trận Bạch Đằng, Ngô Quyền đánh bại quân Nam Hán trên sông Bạch Đằng",
+    "Thời gian": "938"
+  },
+  {
+    "Sự kiện": " Ngô Quyền xưng vương, kinh đô Cổ Loa",
+    "Thời gian": "939"
+  },
+  {
+    "Sự kiện": " Loạn 12 sứ quân",
+    "Thời gian": "944 - 968"
+  },
+  {
+    "Sự kiện": " Đinh Bộ Lĩnh xưng đế, thành lập quốc gia Đại Cồ Việt, kinh đô Hoa Lư",
+    "Thời gian": "968"
+  },
+  {
+    "Sự kiện": " Đinh Bộ Lĩnh cho đúc Thái Bình hưng bảo, đồng tiền đầu tiên của Việt Nam",
+    "Thời gian": "970"
+  },
+  {
+    "Sự kiện": " Đinh Bộ Lĩnh cùng con trai bị sát hại",
+    "Thời gian": "979"
+  },
+  {
+    "Sự kiện": " Lê Hoàn lên ngôi vua, thành lập nhà Tiền Lê",
+    "Thời gian": "980"
+  },
+  {
+    "Sự kiện": " Chiến tranh Tống - Việt",
+    "Thời gian": "tháng 1 - tháng 4 năm 981"
+  },
+  {
+    "Sự kiện": " Lý Công Uẩn lên ngôi vua, thành lập nhà Lý",
+    "Thời gian": "21 tháng 11 năm 1009"
+  },
+  {
+    "Sự kiện": " Lý Công Uẩn dời đô về Thăng Long",
+    "Thời gian": "1010"
+  },
+  {
+    "Sự kiện": " Lý Thánh Tông lên ngôi, đổi tên nước từ Đại Cồ Việt thành Đại Việt",
+    "Thời gian": "1054"
+  },
+  {
+    "Sự kiện": " Chiến tranh Việt-Chiêm, Đại Việt chiếm được 3 châu của Chiêm Thành",
+    "Thời gian": "1069"
+  },
+  {
+    "Sự kiện": " Chiến tranh Tống-Việt",
+    "Thời gian": "1075–1077"
+  },
+  {
+    "Sự kiện": " Trận Như Nguyệt, đẩy lùi quân xâm lược Tống",
+    "Thời gian": "18 tháng 1 – 28 tháng 2 năm 1077"
+  },
+  {
+    "Sự kiện": " Lý Chiêu Hoàng nhường ngôi cho Trần Cảnh, thành lập nhà Trần",
+    "Thời gian": "10 tháng 1 năm 1226"
+  },
+  {
+    "Sự kiện": " Chiến tranh Nguyên Mông–Đại Việt lần 1",
+    "Thời gian": "1258"
+  },
+  {
+    "Sự kiện": " Hội nghị Bình Than, triệu họp vương hầu, trăm quan",
+    "Thời gian": "1282"
+  },
+  {
+    "Sự kiện": " Hội nghị Diên Hồng, triệu họp bô lão cả nước",
+    "Thời gian": "1284"
+  },
+  {
+    "Sự kiện": " Chiến tranh Nguyên Mông-Đại Việt lần 2",
+    "Thời gian": "1285"
+  },
+  {
+    "Sự kiện": " Chiến tranh Nguyên Mông–Đại Việt lần 3",
+    "Thời gian": "1287–1288"
+  },
+  {
+    "Sự kiện": " phát hành Thông Bảo hội sao theo chủ trương của Hồ Quý Ly, đây là tiền giấy đầu tiên của Việt Nam",
+    "Thời gian": "1396"
+  },
+  {
+    "Sự kiện": " Hồ Quý Ly ép Trần Thuận Tông dời đô về Tây Đô",
+    "Thời gian": "1397"
+  },
+  {
+    "Sự kiện": " Hồ Quý Ly lên ngôi, thành lập nhà Hồ, đổi tên nước thành Đại Ngu",
+    "Thời gian": "22 tháng 3 năm 1400"
+  },
+  {
+    "Sự kiện": " Chiến tranh Việt-Chiêm",
+    "Thời gian": "1400–1407"
+  },
+  {
+    "Sự kiện": " Chiến tranh Đại Ngu–Đại Minh",
+    "Thời gian": "1406–1407"
+  },
+  {
+    "Sự kiện": " Trần Ngỗi xưng Giản Định đế, lập nên nhà Hậu Trần",
+    "Thời gian": "2 tháng 10 năm 1407"
+  },
+  {
+    "Sự kiện": " nhà Hậu Trần bị nhà Minh đánh bại",
+    "Thời gian": "1413"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Lam Sơn",
+    "Thời gian": "1418–1427"
+  },
+  {
+    "Sự kiện": " Lê Lợi thành lập quốc gia Đại Việt, đặt kinh đô tại Đông Kinh",
+    "Thời gian": "29 tháng 4 năm 1428"
+  },
+  {
+    "Sự kiện": " Vụ án Lệ Chi viên",
+    "Thời gian": "1442"
+  },
+  {
+    "Sự kiện": " Chính biến Thiên Hưng, Lê Thánh Tông lên ngôi",
+    "Thời gian": "1459–1460"
+  },
+  {
+    "Sự kiện": " Chiến tranh Việt–Chiêm, miền bắc Chiêm Thành sáp nhập vào Đại Việt",
+    "Thời gian": "1471"
+  },
+  {
+    "Sự kiện": " Chiến tranh Đại Việt–Lan Xang",
+    "Thời gian": "1478–1480"
+  },
+  {
+    "Sự kiện": " biên soạn Luật Hồng Đức",
+    "Thời gian": "1483"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Trần Tuân",
+    "Thời gian": "1511–1512"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Trần Cảo",
+    "Thời gian": "1516–1521"
+  },
+  {
+    "Sự kiện": " Khủng hoảng cuối nhà Lê sơ và nội chiến",
+    "Thời gian": "1516-1526"
+  },
+  {
+    "Sự kiện": " Mạc Đăng Dung ép Lê Cung Hoàng nhường ngôi, lập lên nhà Mạc",
+    "Thời gian": "1527"
+  },
+  {
+    "Sự kiện": " Nguyễn Kim lập Lê Ninh làm vua, tái lập nhà Lê, đóng đô tại Vạn Lại",
+    "Thời gian": "1533"
+  },
+  {
+    "Sự kiện": " Chiến tranh Lê–Mạc",
+    "Thời gian": "1533–1677"
+  },
+  {
+    "Sự kiện": " nhà Lê trung hưng đánh bại nhà Mạc, lên nắm quyền điều hành đất nước",
+    "Thời gian": "1592"
+  },
+  {
+    "Sự kiện": " Lê Thế Tông dời đô về Đông Kinh",
+    "Thời gian": "1597"
+  },
+  {
+    "Sự kiện": " Nguyễn Hoàng vào trấn thủ Thuận Hóa",
+    "Thời gian": "1558"
+  },
+  {
+    "Sự kiện": " Trịnh – Nguyễn phân tranh",
+    "Thời gian": "1627–1672"
+  },
+  {
+    "Sự kiện": " nhà Lê trung hưng đánh bại hoàn toàn nhà Mạc",
+    "Thời gian": "1683"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Tây Sơn",
+    "Thời gian": "1771"
+  },
+  {
+    "Sự kiện": " chiến tranh Bình Nam",
+    "Thời gian": "1774–1775"
+  },
+  {
+    "Sự kiện": " Nguyễn Ánh xưng vương",
+    "Thời gian": "1777"
+  },
+  {
+    "Sự kiện": "Nguyễn Nhạc phong Nguyễn Huệ làm Bắc Bình Vương",
+    "Thời gian": " năm 1778"
+  },
+  {
+    "Sự kiện": " Nguyễn Huệ phá tan quân Xiêm tại Rạch Gầm – Xoài Mút",
+    "Thời gian": "19 tháng 1 – 20 tháng 1 năm 1785"
+  },
+  {
+    "Sự kiện": " Nguyễn Huệ xưng đế, đặt niên hiệu Quang Trung, đặt kinh đô tại Phú Xuân",
+    "Thời gian": "22 tháng 12 năm 1788"
+  },
+  {
+    "Sự kiện": " Trận Ngọc Hồi – Đống Đa, đẩy lui quân xâm lược nhà Thanh, nhà Hậu Lê sụp đổ",
+    "Thời gian": "1789"
+  },
+  {
+    "Sự kiện": " Nguyễn Huệ qua đời, con trai Nguyễn Quang Toản lên ngôi",
+    "Thời gian": "16 tháng 9 năm 1792"
+  },
+  {
+    "Sự kiện": " Nguyễn Ánh đánh bại nhà Tây Sơn, lên ngôi vua, đặt niên hiệu là Gia Long, lập lên nhà Nguyễn, đặt kinh đô tại Phú Xuân",
+    "Thời gian": "1802"
+  },
+  {
+    "Sự kiện": " Nổi dậy Đá Vách",
+    "Thời gian": "1803–1855"
+  },
+  {
+    "Sự kiện": " Nguyễn Ánh đổi tên nước thành Việt Nam",
+    "Thời gian": "1804"
+  },
+  {
+    "Sự kiện": " Khởi nghĩa Phan Bá Vành",
+    "Thời gian": "1821–1827"
+  },
+  {
+    "Sự kiện": " Chiến tranh Việt–Xiêm",
+    "Thời gian": "1833–1834"
+  },
+  {
+    "Sự kiện": " Việt Nam thôn tính Chân Lạp, đặt làm Trấn Tây Thành",
+    "Thời gian": "1836"
+  },
+  {
+    "Sự kiện": " Minh Mạng đổi tên nước thành Đại Nam",
+    "Thời gian": "15 tháng 2 năm 1839"
+  },
+  {
+    "Sự kiện": " rút quân khỏi Trấn Tây Thành, Xiêm đặt Ang Duong lên ngôi, tái lập Chân Lạp",
+    "Thời gian": "1841"
+  },
+  {
+    "Sự kiện": " Chiến tranh Pháp-Đại Nam",
+    "Thời gian": "1858–1884"
+  },
+  {
+    "Sự kiện": " Bạo loạn ven biển",
+    "Thời gian": "1861–1865"
+  },
+  {
+    "Sự kiện": " Chính biến chày vôi",
+    "Thời gian": "1866"
+  },
+  {
+    "Sự kiện": " nhà Nguyễn cắt Nam Kỳ lục tỉnh nhượng cho Pháp",
+    "Thời gian": "1867"
+  },
+  {
+    "Sự kiện": " Hòa ước Giáp Thân, kết thúc Chiến tranh Pháp–Đại Nam, triều đình nhà Nguyễn chấp nhận sự bảo hộ của Pháp",
+    "Thời gian": "6 tháng 6 năm 1884"
+  },
+  {
+    "Sự kiện": " phong trào Cần Vương",
+    "Thời gian": "1885–1895"
+  },
+  {
+    "Sự kiện": " thực dân Pháp thành lập Liên bang Đông Dương, gồm Bắc Kỳ, Trung Kỳ, Nam Kỳ và Campuchia, đặt thủ đô tại Sài Gòn",
+    "Thời gian": "17 tháng 10 năm 1887"
+  },
+  {
+    "Sự kiện": " sáp nhập Lào vào Liên bang Đông Dương",
+    "Thời gian": "3 tháng 10 năm 1893"
+  },
+  {
+    "Sự kiện": " sáp nhập Quảng Châu Loan vào Liên bang Đông Dương",
+    "Thời gian": "12 tháng 4 năm 1898"
+  },
+  {
+    "Sự kiện": " Liên bang Đông Dương dời thủ đô về Hà Nội",
+    "Thời gian": "1902"
+  },
+  {
+    "Sự kiện": " phong trào Duy Tân",
+    "Thời gian": "1906–1908"
+  },
+  {
+    "Sự kiện": " phong trào chống sưu thuế Trung Kỳ",
+    "Thời gian": "1908"
+  },
+  {
+    "Sự kiện": " khoảng 100.000 người Việt bị ép sang châu Âu chiến đấu cho Pháp trong Chiến tranh thế giới thứ nhất",
+    "Thời gian": "1914–1918"
+  },
+  {
+    "Sự kiện": " khởi nghĩa Thái Nguyên",
+    "Thời gian": "1917"
+  },
+  {
+    "Sự kiện": " Nguyễn Ái Quốc gửi Yêu sách của nhân dân An Nam tới Hội nghị Hòa bình Versailles",
+    "Thời gian": "18 tháng 6 năm 1919"
+  },
+  {
+    "Sự kiện": " hợp nhất ba tổ chức cộng sản thành Đảng Cộng sản Việt Nam",
+    "Thời gian": "3 tháng 2 năm 1930"
+  },
+  {
+    "Sự kiện": " phong trào Xô Viết Nghệ Tĩnh",
+    "Thời gian": "1930–1931"
+  },
+  {
+    "Sự kiện": " khoảng 20.000 thanh niên Việt Nam bị cưỡng bức phục vụ Pháp trong chiến tranh thế giới thứ hai",
+    "Thời gian": "1939"
+  },
+  {
+    "Sự kiện": " chính phủ Pháp chấp nhận mọi yêu sách, chấp nhận việc chiếm đóng cùng giao quyền điều hành những căn cứ quân sự cho quân đội Nhật",
+    "Thời gian": "25 tháng 9 năm 1940"
+  },
+  {
+    "Sự kiện": " Việt Nam Tuyên truyền Giải phóng quân được thành lập",
+    "Thời gian": "22 tháng 12 năm 1944"
+  },
+  {
+    "Sự kiện": " Bảo Đại thoái vị",
+    "Thời gian": "30 tháng 8 năm 1945"
+  },
+  {
+    "Sự kiện": " Trần Văn Giàu kêu gọi Nam Bộ kháng chiến",
+    "Thời gian": "23 tháng 9 năm 1945"
+  },
+  {
+    "Sự kiện": " Hồ Chí Minh kêu gọi Toàn quốc kháng chiến",
+    "Thời gian": "19 tháng 12 năm 1946"
+  },
+  {
+    "Sự kiện": " Chiến dịch Việt Bắc Thu - Đông 1947",
+    "Thời gian": "7 tháng 10 - 22 tháng 12 năm 1947"
+  },
+  {
+    "Sự kiện": " Pháp lập nên Quốc gia Việt Nam, quốc trưởng Bảo Đại, thủ đô Sài Gòn",
+    "Thời gian": "14 tháng 6 năm 1949"
+  },
+  {
+    "Sự kiện": " Chiến dịch Biên giới",
+    "Thời gian": "16 tháng 9–17 tháng 10 năm 1950"
+  },
+  {
+    "Sự kiện": " Giải phóng Thủ đô",
+    "Thời gian": "10 tháng 10 năm 1954"
+  },
+  {
+    "Sự kiện": " Ngô Đình Diệm phế truất Bảo Đại, lên làm Tổng thống, lập nên Việt Nam Cộng hòa",
+    "Thời gian": "1955"
+  },
+  {
+    "Sự kiện": " Phong trào Đồng khởi",
+    "Thời gian": "1959–1960"
+  },
+  {
+    "Sự kiện": " thành lập Mặt trận Dân tộc Giải phóng miền Nam Việt Nam",
+    "Thời gian": "20 tháng 12 năm 1960"
+  },
+  {
+    "Sự kiện": " thành lập Quân Giải phóng miền Nam Việt Nam",
+    "Thời gian": "15 tháng 12 năm 1961"
+  },
+  {
+    "Sự kiện": " chiến dịch Chiến tranh đặc biệt",
+    "Thời gian": "1961–1965"
+  },
+  {
+    "Sự kiện": " đảo chính lật đổ chính quyền Ngô Đình Diệm",
+    "Thời gian": "1963"
+  },
+  {
+    "Sự kiện": " Mỹ bắt đầu đưa quân vào tham chiến tại miền Nam Việt Nam",
+    "Thời gian": "8 tháng 3 năm 1965"
+  },
+  {
+    "Sự kiện": " chiến dịch Chiến tranh cục bộ",
+    "Thời gian": "1965–1968"
+  },
+  {
+    "Sự kiện": " chiến dịch Việt Nam hóa chiến tranh",
+    "Thời gian": "1968–1973"
+  },
+  {
+    "Sự kiện": " Chủ tịch Hồ Chí Minh từ trần",
+    "Thời gian": "2 tháng 9 năm 1969"
+  },
+  {
+    "Sự kiện": " Chiến dịch Điện Biên Phủ trên không",
+    "Thời gian": "18 tháng 12 - 30 tháng 12 năm 1972"
+  },
+  {
+    "Sự kiện": " Hiệp định Paris, Mỹ rút quân khỏi Việt Nam",
+    "Thời gian": "27 tháng 1 năm 1973"
+  },
+  {
+    "Sự kiện": " chính phủ Việt Nam Cộng hòa đầu hàng vô điều kiện Cộng hòa Miền Nam Việt Nam",
+    "Thời gian": "30 tháng 4 năm 1975"
+  },
+  {
+    "Sự kiện": " thống nhất đất nước, đổi tên nước thành Cộng hòa xã hội chủ nghĩa Việt Nam",
+    "Thời gian": "2 tháng 7 năm 1976"
+  },
+  {
+    "Sự kiện": " gia nhập Liên Hợp Quốc",
+    "Thời gian": "20 tháng 9 năm 1977"
+  },
+  {
+    "Sự kiện": " chiến tranh biên giới Tây Nam",
+    "Thời gian": "1975–1979"
+  },
+  {
+    "Sự kiện": " chiến tranh biên giới phía Bắc",
+    "Thời gian": "1979"
+  },
+  {
+    "Sự kiện": " Đổi Mới",
+    "Thời gian": "1986"
+  },
+  {
+    "Sự kiện": " bình thường hóa quan hệ với Trung Quốc",
+    "Thời gian": "7 tháng 11 năm 1991"
+  },
+  {
+    "Sự kiện": " gia nhập ASEAN",
+    "Thời gian": "28 tháng 7 năm 1995"
+  },
+  {
+    "Sự kiện": " gia nhập APEC",
+    "Thời gian": "14 tháng 11 năm 1998"
+  },
+  {
+    "Sự kiện": " gia nhập WTO",
+    "Thời gian": "11 tháng 1 năm 2007"
+  }
+]
