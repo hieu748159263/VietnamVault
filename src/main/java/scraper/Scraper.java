@@ -3,6 +3,8 @@ package scraper;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.json.JSONArray;
@@ -55,12 +57,15 @@ public class Scraper {
     }
 }
 
-@JsonPropertyOrder({"link","xpath","regex","type"})
+@JsonPropertyOrder({ "link", "xpath", "type" })
 class ScrapeObject {
+
+    private static final Pattern vietnamese = Pattern.compile(
+                "([a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựýỳỵỷỹ(](.|\n)*[a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựýỳỵỷỹ)])");
+    private static final Pattern bracket = Pattern.compile("\\[\\w+\\]|\\[?\\w+\\]|\\[\\w+\\]?|^[0-9]+$");
 
     private String link;
     private String xpath;
-    private String regex;
     private String type;
 
     public String getLink() {
@@ -71,12 +76,19 @@ class ScrapeObject {
         return xpath;
     }
 
-    public String getRegex() {
-        return regex;
-    }
-
     public String getType() {
         return type;
+    }
+
+    public static String matchVietnameseChar(String str) {
+        Matcher vnMatcher = vietnamese.matcher(str);
+        if (vnMatcher.find()){
+            String vnString = vnMatcher.group(1);
+            Matcher bracketMatcher = bracket.matcher(vnString);
+            return bracketMatcher.replaceAll("");
+        } else {
+            return "";
+        }
     }
 
     public JSONArray scrape() throws Exception {
@@ -93,7 +105,7 @@ class ScrapeObject {
 
                 List<HtmlTableCell> header = table.getRow(0).getCells();
                 List<String> attrName = header.stream()
-                        .map(cell -> cell.asNormalizedText().replaceAll(regex, ""))
+                        .map(cell -> matchVietnameseChar(cell.asNormalizedText()))
                         .collect(Collectors.toList());
 
                 for (int i = 1; i < table.getRows().size(); i++) {
@@ -101,8 +113,7 @@ class ScrapeObject {
                     for (int j = 0; j < attrName.size(); j++)
                         try {
                             jsonObject.put(attrName.get(j),
-                                    table.getCellAt(i, j).asNormalizedText()
-                                            .replaceAll(regex, "")
+                                    matchVietnameseChar(table.getCellAt(i, j).asNormalizedText())
                                             .replaceAll("\n", ", "));
                         } catch (Exception NullPointerException) {
                             jsonObject.put(attrName.get(j), "");
