@@ -163,17 +163,14 @@
                         </Label>
                         <TableView fx:id="tblSukien" layoutX="19.0" layoutY="134.0" prefHeight="442.0" prefWidth="663.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="Lễ hội truyền thống" />
-                                <TableColumn prefWidth="75.0" text="Ngày âm lịch" />
-                                <TableColumn prefWidth="75.0" text="Ghi chú" />
-                                <TableColumn prefWidth="75.0" text="Lần đầu tổ chức năm" />
-                                <TableColumn prefWidth="120.800048828125" text="Vị trí" />
+                                <TableColumn prefWidth="75.0" text="Sự kiện" />
+                                <TableColumn prefWidth="75.0" text="Thời gian" />                         
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
+                        <TextField fx:id="tfSukien" layoutX="108.0" layoutY="73.0" prefHeight="25.0" prefWidth="572.0" promptText="search" />
                         <Label alignment="TOP_CENTER" layoutX="164.0" layoutY="24.0" prefHeight="30.0" prefWidth="373.0" text="Các sự kiện lịch sử Việt Nam">
                             <font>
                                 <Font size="22.0" />
