@@ -80,6 +80,8 @@ public class Controller implements Initializable {
     private TextField tfNhanVat;
     @FXML
     private TextField tfDiaDiem;
+    @FXML
+    private TextField tfSukien;
 
 //    @FXML
 //    private ChoiceBox<String> festival_choicebox;
