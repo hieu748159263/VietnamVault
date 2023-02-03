@@ -1,8 +1,17 @@
 package app;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
 import historyobject.dynasty.Dynasty;
 import historyobject.event.Event;
 import historyobject.festival.Festival;
@@ -17,19 +26,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
@@ -82,66 +88,66 @@ public class Controller implements Initializable {
     @FXML
     private TextField tfSukien;
     @FXML
-    private TableView tblSukien;
+    private TableView<Event> tblSukien;
     @FXML
-    private TableView tblLehoi;
+    private TableView<Festival> tblLehoi;
     @FXML
-    private TableView tblTrieudai;
+    private TableView<Dynasty> tblTrieudai;
     @FXML
-    private TableView tblNhanvat;
+    private TableView<King> tblNhanvat;
     @FXML
-    private TableView tblDiadiem;
+    private TableView<Site> tblDiadiem;
     // column id used in table Trieu dai
     @FXML
-    private TableColumn columnAge;
+    private TableColumn<Dynasty, String> columnAge;
     @FXML
-    private TableColumn columnPeriod;
+    private TableColumn<Dynasty, String> columnPeriod;
     @FXML
-    private TableColumn columnKings;
+    private TableColumn<Dynasty, String> columnKings;
     @FXML
-    private TableColumn columnDynastyName;
+    private TableColumn<Dynasty, String> columnDynastyName;
     @FXML
-    private TableColumn columnReignTime;
+    private TableColumn<Dynasty, String> columnReignTime;
     @FXML
-    private TableColumn columnFestivalName;
+    private TableColumn<Festival, String> columnFestivalName;
     @FXML
-    private TableColumn columnLunarCalendarDate;
+    private TableColumn<Festival, String> columnLunarCalendarDate;
     @FXML
-    private TableColumn columnNote;
+    private TableColumn<Festival, String> columnNote;
     @FXML
-    private TableColumn columnTheFirstTime_Year;
+    private TableColumn<Festival, String> columnTheFirstTime_Year;
     @FXML
-    private TableColumn columnLocation;
+    private TableColumn<Festival, String> columnLocation;
     @FXML
-    private TableColumn columnRelatedCharacter;
+    private TableColumn<Festival, String> columnRelatedCharacter;
     @FXML
-    private TableColumn columnTen;
+    private TableColumn<King, String> columnTen;
     @FXML
-    private TableColumn columnMieuHieu;
+    private TableColumn<King, String> columnMieuHieu;
     @FXML
-    private TableColumn columnThuyHieu;
+    private TableColumn<King, String> columnThuyHieu;
     @FXML
-    private TableColumn columnNienHieu;
+    private TableColumn<King, String> columnNienHieu;
     @FXML
-    private TableColumn columnTenHuy;
+    private TableColumn<King, String> columnTenHuy;
     @FXML
-    private TableColumn columnTheThu;
+    private TableColumn<King, String> columnTheThu;
     @FXML
-    private TableColumn columnTriVi;
+    private TableColumn<King, String> columnTriVi;
     @FXML
-    private TableColumn columnTypeOfMonument;
+    private TableColumn<Site, String> columnTypeOfMonument;
     @FXML
-    private TableColumn columnMonument;
+    private TableColumn<Site, String> columnMonument;
     @FXML
-    private TableColumn columnNoteOfMonument;
+    private TableColumn<Site, String> columnNoteOfMonument;
     @FXML
-    private TableColumn columnLocationOfMonument;
+    private TableColumn<Site, String> columnLocationOfMonument;
     @FXML
-    private TableColumn columnDateOfMonument;
+    private TableColumn<Site, String> columnDateOfMonument;
     @FXML
-    private TableColumn columnEventName;
+    private TableColumn<Event, String> columnEventName;
     @FXML
-    private TableColumn columnEventTime;
+    private TableColumn<Event, String> columnEventTime;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -182,8 +188,7 @@ public class Controller implements Initializable {
         tblTrieudai.setItems(observableDynastyList);
         FilteredList<Dynasty> filteredDataDynasty = new FilteredList<>(observableDynastyList, b -> true);
         tfTrieuDai.textProperty().addListener((observableValue, s, t1) -> {
-            filteredDataDynasty.setPredicate(Dynasty ->
-            {
+            filteredDataDynasty.setPredicate(Dynasty -> {
                 if (t1.isEmpty() || t1.isBlank() || t1 == null) {
                     return true;
                 }
@@ -198,7 +203,8 @@ public class Controller implements Initializable {
                     return true;
                 } else if (Dynasty.getAge().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else return false;
+                } else
+                    return false;
             });
         });
 
@@ -224,8 +230,7 @@ public class Controller implements Initializable {
         tblLehoi.setItems(observableFestivalList);
         FilteredList<Festival> filteredDataFestival = new FilteredList<>(observableFestivalList, b -> true);
         tfLeHoi.textProperty().addListener((observableValue, s, t1) -> {
-            filteredDataFestival.setPredicate(Festival ->
-            {
+            filteredDataFestival.setPredicate(Festival -> {
                 if (t1.isEmpty() || t1.isBlank() || t1 == null) {
                     return true;
                 }
@@ -240,9 +245,10 @@ public class Controller implements Initializable {
                     return true;
                 } else if (Festival.getTheFirstTime_Year().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else if (Festival.getRelatedCharacter().toLowerCase().indexOf(searchKeyword) > -1){
+                } else if (Festival.getRelatedCharacter().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                }  else return false;
+                } else
+                    return false;
             });
         });
 
@@ -269,8 +275,7 @@ public class Controller implements Initializable {
         tblNhanvat.setItems(observableKingList);
         FilteredList<King> filteredDataKing = new FilteredList<>(observableKingList, b -> true);
         tfNhanVat.textProperty().addListener((observableValue, s, t1) -> {
-            filteredDataKing.setPredicate(King ->
-            {
+            filteredDataKing.setPredicate(King -> {
                 if (t1.isEmpty() || t1.isBlank() || t1 == null) {
                     return true;
                 }
@@ -287,7 +292,8 @@ public class Controller implements Initializable {
                     return true;
                 } else if (King.getTriVi().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else return false;
+                } else
+                    return false;
             });
         });
 
@@ -312,8 +318,7 @@ public class Controller implements Initializable {
         tblDiadiem.setItems(observableSiteList);
         FilteredList<Site> filteredDataSite = new FilteredList<>(observableSiteList, b -> true);
         tfDiaDiem.textProperty().addListener((observableValue, s, t1) -> {
-            filteredDataSite.setPredicate(Site ->
-            {
+            filteredDataSite.setPredicate(Site -> {
                 if (t1.isEmpty() || t1.isBlank() || t1 == null) {
                     return true;
                 }
@@ -328,7 +333,8 @@ public class Controller implements Initializable {
                     return true;
                 } else if (Site.getName().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else return false;
+                } else
+                    return false;
             });
         });
 
@@ -350,8 +356,7 @@ public class Controller implements Initializable {
         tblSukien.setItems(observableEventList);
         FilteredList<Event> filteredDataEvent = new FilteredList<>(observableEventList, b -> true);
         tfSukien.textProperty().addListener((observableValue, s, t1) -> {
-            filteredDataEvent.setPredicate(Site ->
-            {
+            filteredDataEvent.setPredicate(Site -> {
                 if (t1.isEmpty() || t1.isBlank() || t1 == null) {
                     return true;
                 }
@@ -360,7 +365,8 @@ public class Controller implements Initializable {
                     return true;
                 } else if (Site.getTime().toLowerCase().indexOf(searchKeyword) > -1) {
                     return true;
-                } else return false;
+                } else
+                    return false;
             });
         });
 
@@ -368,7 +374,6 @@ public class Controller implements Initializable {
         sortedDataEvent.comparatorProperty().bind(tblSukien.comparatorProperty());
         tblSukien.setItems(sortedDataEvent);
     }
-
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnLeHoi) {
