@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import historyobject.dynasty.Dynasty;
+import historyobject.event.Event;
 import historyobject.festival.Festival;
 import historyobject.king.King;
 import historyobject.site.Site;
@@ -35,8 +36,6 @@ public class Controller implements Initializable {
     @FXML
     private AnchorPane App;
     Stage stage;
-    // @FXML
-    // private VBox pnItems = null;
     @FXML
     private Button btnTrangchu;
 
@@ -80,20 +79,8 @@ public class Controller implements Initializable {
     private TextField tfNhanVat;
     @FXML
     private TextField tfDiaDiem;
-
-//    @FXML
-//    private ChoiceBox<String> festival_choicebox;
-//    @FXML
-//    private ChoiceBox<String> dynasty_choicebox;
-//    @FXML
-//    private ChoiceBox<String> king_choicebox;
-//    @FXML
-//    private ChoiceBox<String> site_choicebox;
-//    private String[] festival = { "Lễ hội truyền thống", "Ngày âm lịch", "Ghi chú", "Lần đầu tổ chức năm", "Vị trí" };
-//    private String[] dynasty = { "Tuổi thọ", "Thời kỳ", "Các vị vua", "Tên triều đại", "Năm trị vì" };
-//    private String[] king = { "Vua", "Miếu hiệu", "Thụy hiệu", "Niên hiệu", "Tên húy", "Thế thứ", "Trị vì" };
-//    private String[] site = { "Loại di tích", "Di tích", "Ghi chú", "Vị trí", "Năm CN" };
-
+    @FXML
+    private TextField tfSukien;
     @FXML
     private TableView tblSukien;
     @FXML
@@ -115,7 +102,6 @@ public class Controller implements Initializable {
     private TableColumn columnDynastyName;
     @FXML
     private TableColumn columnReignTime;
-    // column id used in table Le hoi
     @FXML
     private TableColumn columnFestivalName;
     @FXML
@@ -128,7 +114,6 @@ public class Controller implements Initializable {
     private TableColumn columnLocation;
     @FXML
     private TableColumn columnRelatedCharacter;
-    // column id used in table Nhan vat
     @FXML
     private TableColumn columnTen;
     @FXML
@@ -143,7 +128,6 @@ public class Controller implements Initializable {
     private TableColumn columnTheThu;
     @FXML
     private TableColumn columnTriVi;
-    // column id used in table Dia diem
     @FXML
     private TableColumn columnTypeOfMonument;
     @FXML
@@ -154,15 +138,14 @@ public class Controller implements Initializable {
     private TableColumn columnLocationOfMonument;
     @FXML
     private TableColumn columnDateOfMonument;
+    @FXML
+    private TableColumn columnEventName;
+    @FXML
+    private TableColumn columnEventTime;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Node[] nodes = new Node[10];
-
-//        festival_choicebox.getItems().addAll(festival);
-//        dynasty_choicebox.getItems().addAll(dynasty);
-//        king_choicebox.getItems().addAll(king);
-//        site_choicebox.getItems().addAll(site);
 
         for (int i = 0; i < nodes.length; i++) {
             try {
@@ -170,21 +153,16 @@ public class Controller implements Initializable {
                 final int j = i;
                 nodes[i] = FXMLLoader.load(getClass().getResource("Item.fxml"));
 
-                // give the items some effect
-
                 nodes[i].setOnMouseEntered(event -> {
                     nodes[j].setStyle("-fx-background-color : #0A0E3F");
                 });
                 nodes[i].setOnMouseExited(event -> {
                     nodes[j].setStyle("-fx-background-color : #02030A");
                 });
-                // pnItems.getChildren().add(nodes[i]);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-        // Add Data Dynasty to TableView
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type dynastyType = new TypeToken<List<Dynasty>>() {
         }.getType();
@@ -202,7 +180,6 @@ public class Controller implements Initializable {
         columnDynastyName.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("dynastyName"));
         columnReignTime.setCellValueFactory(new PropertyValueFactory<Dynasty, String>("reignTime"));
         tblTrieudai.setItems(observableDynastyList);
-        //Initial filtered list <Dynasty>
         FilteredList<Dynasty> filteredDataDynasty = new FilteredList<>(observableDynastyList, b -> true);
         tfTrieuDai.textProperty().addListener((observableValue, s, t1) -> {
             filteredDataDynasty.setPredicate(Dynasty ->
@@ -228,7 +205,6 @@ public class Controller implements Initializable {
         SortedList<Dynasty> sortedDataDynasty = new SortedList<>(filteredDataDynasty);
         sortedDataDynasty.comparatorProperty().bind(tblTrieudai.comparatorProperty());
         tblTrieudai.setItems(sortedDataDynasty);
-        // Add Data Festival to TableView
         Type festivalType = new TypeToken<List<Festival>>() {
         }.getType();
         List<Festival> objFestival;
@@ -246,7 +222,6 @@ public class Controller implements Initializable {
         columnLocation.setCellValueFactory(new PropertyValueFactory<Festival, String>("location"));
         columnRelatedCharacter.setCellValueFactory(new PropertyValueFactory<Festival, String>("relatedCharacter"));
         tblLehoi.setItems(observableFestivalList);
-//        Initial filtered list <festival>
         FilteredList<Festival> filteredDataFestival = new FilteredList<>(observableFestivalList, b -> true);
         tfLeHoi.textProperty().addListener((observableValue, s, t1) -> {
             filteredDataFestival.setPredicate(Festival ->
@@ -274,7 +249,6 @@ public class Controller implements Initializable {
         SortedList<Festival> sortedDataFestival = new SortedList<>(filteredDataFestival);
         sortedDataFestival.comparatorProperty().bind(tblLehoi.comparatorProperty());
         tblLehoi.setItems(sortedDataFestival);
-        // Add Data King to TableView
         Type kingType = new TypeToken<List<King>>() {
         }.getType();
         List<King> objKing;
@@ -293,7 +267,6 @@ public class Controller implements Initializable {
         columnTheThu.setCellValueFactory(new PropertyValueFactory<King, String>("theThu"));
         columnTriVi.setCellValueFactory(new PropertyValueFactory<King, String>("triVi"));
         tblNhanvat.setItems(observableKingList);
-        //        Initial filtered list <King>
         FilteredList<King> filteredDataKing = new FilteredList<>(observableKingList, b -> true);
         tfNhanVat.textProperty().addListener((observableValue, s, t1) -> {
             filteredDataKing.setPredicate(King ->
@@ -321,7 +294,6 @@ public class Controller implements Initializable {
         SortedList<King> sortedDataKing = new SortedList<>(filteredDataKing);
         sortedDataKing.comparatorProperty().bind(tblNhanvat.comparatorProperty());
         tblNhanvat.setItems(sortedDataKing);
-        // Add Site to TableView
         Type siteType = new TypeToken<List<Site>>() {
         }.getType();
         List<Site> objSite;
@@ -338,7 +310,6 @@ public class Controller implements Initializable {
         columnLocationOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("location"));
         columnDateOfMonument.setCellValueFactory(new PropertyValueFactory<Site, String>("recognizedYear"));
         tblDiadiem.setItems(observableSiteList);
-        //        Initial filtered list <Site>
         FilteredList<Site> filteredDataSite = new FilteredList<>(observableSiteList, b -> true);
         tfDiaDiem.textProperty().addListener((observableValue, s, t1) -> {
             filteredDataSite.setPredicate(Site ->
@@ -364,77 +335,96 @@ public class Controller implements Initializable {
         SortedList<Site> sortedDataSite = new SortedList<>(filteredDataSite);
         sortedDataSite.comparatorProperty().bind(tblDiadiem.comparatorProperty());
         tblDiadiem.setItems(sortedDataSite);
+        Type eventType = new TypeToken<List<Event>>() {
+        }.getType();
+        List<Event> objEvent;
+        try {
+            objEvent = gson.fromJson(new FileReader("src\\main\\resources\\data\\event.json"), eventType);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        final ObservableList<Event> observableEventList = FXCollections.observableArrayList(objEvent);
+
+        columnEventName.setCellValueFactory(new PropertyValueFactory<Event, String>("name"));
+        columnEventTime.setCellValueFactory(new PropertyValueFactory<Event, String>("time"));
+        tblSukien.setItems(observableEventList);
+        FilteredList<Event> filteredDataEvent = new FilteredList<>(observableEventList, b -> true);
+        tfSukien.textProperty().addListener((observableValue, s, t1) -> {
+            filteredDataEvent.setPredicate(Site ->
+            {
+                if (t1.isEmpty() || t1.isBlank() || t1 == null) {
+                    return true;
+                }
+                String searchKeyword = t1.toLowerCase();
+                if (Site.getName().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else if (Site.getTime().toLowerCase().indexOf(searchKeyword) > -1) {
+                    return true;
+                } else return false;
+            });
+        });
+
+        SortedList<Event> sortedDataEvent = new SortedList<>(filteredDataEvent);
+        sortedDataEvent.comparatorProperty().bind(tblSukien.comparatorProperty());
+        tblSukien.setItems(sortedDataEvent);
     }
 
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnLeHoi) {
-            // pnlLeHoi.setStyle("-fx-background-color : #FFF");
             pnlLeHoi.setVisible(true);
-
             pnlSuKien.setVisible(false);
             pnlNhanVat.setVisible(false);
             pnlDiaDiem.setVisible(false);
             pnlTrieuDai.setVisible(false);
-
             pnlLeHoi.toFront();
         }
         if (actionEvent.getSource() == btnTrieuDai) {
 
             pnlTrieuDai.setVisible(true);
-
             pnlDiaDiem.setVisible(false);
             pnlLeHoi.setVisible(false);
             pnlSuKien.setVisible(false);
             pnlNhanVat.setVisible(false);
-
             pnlTrieuDai.toFront();
         }
         if (actionEvent.getSource() == btnTrangchu) {
 
             pnlTrangchu.setVisible(true);
-
             pnlDiaDiem.setVisible(false);
             pnlTrieuDai.setVisible(false);
             pnlLeHoi.setVisible(false);
             pnlNhanVat.setVisible(false);
-
             pnlTrangchu.toFront();
 
         }
         if (actionEvent.getSource() == btnSuKien) {
 
             pnlSuKien.setVisible(true);
-
             pnlDiaDiem.setVisible(false);
             pnlTrieuDai.setVisible(false);
             pnlLeHoi.setVisible(false);
             pnlNhanVat.setVisible(false);
-
             pnlSuKien.toFront();
 
         }
         if (actionEvent.getSource() == btnNhanVat) {
 
             pnlNhanVat.setVisible(true);
-
             pnlDiaDiem.setVisible(false);
             pnlLeHoi.setVisible(false);
             pnlSuKien.setVisible(false);
             pnlTrieuDai.setVisible(false);
-
             pnlNhanVat.toFront();
 
         }
         if (actionEvent.getSource() == btnDiaDiem) {
 
             pnlDiaDiem.setVisible(true);
-
             pnlTrieuDai.setVisible(false);
             pnlSuKien.setVisible(false);
             pnlLeHoi.setVisible(false);
             pnlNhanVat.setVisible(false);
-
             pnlDiaDiem.toFront();
 
         }
