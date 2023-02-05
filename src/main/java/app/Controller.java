@@ -151,24 +151,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Node[] nodes = new Node[10];
 
-        for (int i = 0; i < nodes.length; i++) {
-            try {
-
-                final int j = i;
-                nodes[i] = FXMLLoader.load(getClass().getResource("Item.fxml"));
-
-                nodes[i].setOnMouseEntered(event -> {
-                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
-                });
-                nodes[i].setOnMouseExited(event -> {
-                    nodes[j].setStyle("-fx-background-color : #02030A");
-                });
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Type dynastyType = new TypeToken<List<Dynasty>>() {
         }.getType();
