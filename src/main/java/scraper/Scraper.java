@@ -22,7 +22,7 @@ public abstract class Scraper {
         return type;
     }
 
-    public static String stripInfo(String rawInfo) {
+    protected static String stripInfo(String rawInfo) {
         Matcher textMatcher = TEXTPATTERN.matcher(rawInfo);
         if (textMatcher.find())
             return textMatcher.group(1).replaceAll(BRACKETREGEX, "");
