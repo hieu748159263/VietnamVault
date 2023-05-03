@@ -36,5 +36,5 @@ A simple JavaFx application that enables users to search and sort through a coll
 
 # License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT](/LICENSE) license.
 
